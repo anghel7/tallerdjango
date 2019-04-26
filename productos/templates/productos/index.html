@@ -1,0 +1,41 @@
+{% extends './base.html' %}
+{% block content %}
+<div class="card border-dark mb-3">
+    <div class="card-header">
+        <h5>Productos</h5>
+    </div>
+    <div class="card-body">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for producto in lista_productos %}
+                <tr>
+                    <td>{{ producto.nombre }}</td>
+                    <td>{{ producto.cantidad }}</td>
+                    <td>
+                        <a href="{% url "producto_detail" producto.id %}">
+                            <i class="zmdi zmdi-view-list zmdi-hc-lg"></i>
+                        </a>
+                        <a href="{% url "producto_update" producto.id %}">
+                            <i class="zmdi zmdi-edit zmdi-hc-lg"></i>
+                        </a>
+                        <a href="{% url "producto_delete" producto.id %}">
+                            <i class="zmdi zmdi-delete zmdi-hc-lg"></i>
+                        </a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="card-footer">
+        <a href="{% url "producto_create" %}" class="btn btn-primary">Crear Producto</a>
+    </div>
+</div>
+{% endblock %}
