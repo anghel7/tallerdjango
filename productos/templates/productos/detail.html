@@ -1,18 +1,15 @@
-{% extends './base.html' %}
-{% block content %}
 <div class="card border-dark mb-3">
     <div class="card-header">
-        <h5>{{producto.nombre}}</h5>
+        <h5>nobre del producto</h5>
     </div>
     <div class="card-body">
-        <p><b>Descripción:</b> {{producto.descripcion}}</p>
-        <p><b>Precio:</b> {{producto.precio}}</p>
-        <p><b>Cantidad:</b> {{producto.cantidad}}</p>
+        <p><b>Descripción:</b> descripcion</p>
+        <p><b>Precio:</b> precio</p>
+        <p><b>Cantidad:</b> cantidad</p>
     </div>
     <div class="card-footer">
-        <a href="{% url "product_list" %}" class="btn btn-primary">
+        <a href="" class="btn btn-primary">
             Volver Atras
         </a>
     </div>
 </div>
-{% endblock %}
